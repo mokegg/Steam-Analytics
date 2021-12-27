@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - Steam analytcs</title>
+      {% else %}
+      <title>Welcome to Steam analytics</title>
+      {% endif %}
+    </head>
+    <body>
+        <h1>Steam analytics</h1>
+        <h2>{{name}}</h2>
+        <div>
+            Steam: 
+            <a href="/index">Home</a>
+            <a href="/Q">Query</a>
+            <a href="/v">Visuals</a>
+        </div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

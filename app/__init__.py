@@ -6,7 +6,7 @@ Created on Thu Dec 16 18:38:05 2021
 @author: mokegg
 """
 
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
